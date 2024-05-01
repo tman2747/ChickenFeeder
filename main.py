@@ -2,7 +2,20 @@ import paho.mqtt.client as mqtt
 from time import sleep
 import settings
 from ChickenServo import ChickenServo
+import subprocess
 
+def start_pigpiod(): 
+    # I was having trouble getting pidpiod to load on my pi using the service. 
+    # I think adjusting to After=multi-user.target would have 
+    # fixed this but this works too and currently I dont see a reason to look into it further.
+    try:
+        subprocess.check_output(['pgrep', 'pigpiod'])
+    except subprocess.CalledProcessError:
+        subprocess.run(['sudo', 'pigpiod'])
+        sleep(5)
+
+# Call the function to start pigpiod
+start_pigpiod()
 stop_threads = False 
 
 mainServo = ChickenServo(17)
