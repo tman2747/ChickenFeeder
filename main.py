@@ -14,7 +14,7 @@ def start_pigpiod():
         subprocess.run(['sudo', 'pigpiod'])
         sleep(5)
 
-# Call the function to start pigpiod
+# start pigpiod
 start_pigpiod()
 stop_threads = False 
 
@@ -29,7 +29,7 @@ def on_message(client, userdata, msg):
     global stop_threads # need this global to end thread
     print(msg.topic+" "+str(msg.payload))
     message = msg.payload.decode('utf-8')
-    if message == "kill":
+    if message == "kill": # havent tested if the services will automatically restart the feeder if this is called so dont trust this.
         stop_threads = True
     if message == "next":
         mainServo.dropFood()
