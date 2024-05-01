@@ -9,7 +9,7 @@ I decided to use a Raspberry Pi 🥧 for this project because I had an extra one
 I decided to use MQTT for the messaging between the Discord bot and the feeder. This allowed for easy command transmission because the feeder wouldn't be on my local network. This also allowed me to extend control to another Raspberry Pi 🥧 in my home setup that runs my Discord bot.
 
 ## Features
-- **Discord Bot Integration 🤖:** Interact with the feeder remotely through Discord commands.
+- **Discord Bot Integration 🤖:** Interact with the feeder remotely through Discord commands. [Link to Discord Bot](https://github.com/tman2747/TeamKillTracker)
 
 - **Servo Motor Control 🛠️:** Control the feeder mechanism using servo motors.
 
