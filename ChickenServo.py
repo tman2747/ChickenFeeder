@@ -28,11 +28,17 @@ class ChickenServo:
             self.direction = True
 
         if self.direction:
-            new_angle = self.angle + 45
+            new_angle = self.angle + 80
+            if new_angle > 270:
+                new_angle = 270
             self.moveToAngle(new_angle)
         else:
-            new_angle = self.angle - 45
+            new_angle = self.angle - 80
+            if new_angle < -270:
+                new_angle = -270
             self.moveToAngle(new_angle)
+        print(self.direction)
+        print(self.angle)
         
 
 def main():

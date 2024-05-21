@@ -49,6 +49,10 @@ def mqtt_client_thread():
     client.connect(broker_address, port=port, keepalive=60)
     client.loop_start()
 
+    # for i in range(20): for debuging
+    #     mainServo.dropFood()
+    #     sleep(3)
+
     try:
         while not stop_threads:
             sleep(1)
