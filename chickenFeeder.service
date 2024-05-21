@@ -1,0 +1,13 @@
+[Unit]
+Description=chicken feeder
+After=multi-user.target
+
+[Service]
+Type=simple
+User=tman2747
+WorkingDirectory=/home/tman2747/chickenFeeder
+ExecStart=/home/tman2747/chickenFeeder/venv/bin/python3 /home/tman2747/chickenFeeder/main.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
